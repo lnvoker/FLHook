@@ -1,5 +1,6 @@
 #pragma once
 
+
 // Current version of FLHook.
 #define VERSION L"3.1.0-Discovery"
 
@@ -25,6 +26,7 @@ typedef unsigned __int64 mstime;
                          loop_name##_skip: if (0) \
                          loop_name:
 
+#define _ALLOW_KEYWORD_MACROS
 #define break(loop_name) goto loop_name##_skip
 
 
@@ -37,12 +39,10 @@ typedef unsigned __int64 mstime;
 #define foreach(lst, type, var) for(list<type>::iterator var = lst.begin(); (var != lst.end()); var++)
 
 
-// Who writes functions whose names coincide with std ones?
+// Who actually writes functions whose names coincide with std ones?
 using namespace std;
 
 
-// Welcome to main program namespace.
-// Entire FLHook SDK is supposed to be placed here.
 // The namespace contains only other namespaces which you can optionally use.
 namespace FLHook 
 {
